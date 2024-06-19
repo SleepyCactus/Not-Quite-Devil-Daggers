@@ -13,8 +13,11 @@ public class BasicFlyingMotor : MotorBase
     [SerializeField] float m_wavePower;
     [SerializeField] float m_waveSpeed;
     Vector3 avoidanceVector = Vector3.zero;
-    
 
+    public void Awake()
+    {
+        t_target = GameManager.Instance.PlayerController.CamRef.gameObject;
+    }
     public override IEnumerator Tick()
     {
         while (true)
@@ -39,6 +42,9 @@ public class BasicFlyingMotor : MotorBase
     public override void StopMotor()
     {
         StopCoroutine(m_tick);
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        trajectoryVector = Vector3.zero;
+        
     }
     public override void UpdateMotor()
     {
