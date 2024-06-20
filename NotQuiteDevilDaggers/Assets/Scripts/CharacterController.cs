@@ -17,4 +17,13 @@ public class CharacterController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(Motor.trajectoryVector);
         m_rb.AddForce(transform.forward * Motor.Speed, ForceMode.Acceleration);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Bullet")
+        {
+            GameManager.Instance.EnemyManager.EnemyList.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 }

@@ -77,10 +77,10 @@ public class UpdateGameState : GameFlowStates, IState
         Debug.Log("Executed " + this.ToString());
         GameManager.Instance.CurrentTime += Time.deltaTime;
         time += Time.deltaTime;
-        if(time >= 5)
+        if(time >= 2)
         {
             time = 0;
-            GameManager.Instance.EnemyManager.SpawnEnemy();
+            GameManager.Instance.EnemyManager.SpawnEnemy(GameManager.Instance.EnemyManager.RandomPointOnCircleEdge(60));
         }
         if(GameManager.Instance.CurrentTime >= GameManager.Instance.GameWinTime)
         {

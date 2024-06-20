@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 3477971265073066097}
   - component: {fileID: 5296019889068970377}
   m_Layer: 0
-  m_Name: LoseCame
+  m_Name: LoseCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
